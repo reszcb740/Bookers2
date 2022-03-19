@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @user = User.all
+    @book = Book.all
   end
 
   def show
@@ -21,6 +22,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.requeire(:user).permit(:name, :book, :introduction)
+    params.require(:user).permit(:name, :book, :introduction)
   end
 end
