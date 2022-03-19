@@ -1,41 +1,28 @@
-<header>
-  <nav>
-    <div>
-      <a>
-        <span>Bookers</span>
-      </a>
-      <button></button>
-      <div>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
+
 <main>
   <p></p>
   <div>
     <div>
       <h2>User info</h2>
-      <%= %>
-      <table>
-        <tbody>
-          <tr></tr>
-          <tr>
-            <th>name</th>
-            <th></th>
-          </tr>
-          <tr>
-            <th>introduction</th>
-            <th></th>
-          </tr>
-        </tbody>
+        <%= image_tag @user.get_profile_image(100, 100) %>
+        <table>
+          <tbody>
+            <tr></tr>
+            <tr>
+              <th>name</th>
+              <th><%= @user.name %></th>
+            </tr>
+            <tr>
+              <th>introduction</th>
+              <th><%= f.text_area :introduction %></th>
+        <% end %>
+           </tr>
+         </tbody>
       </table>
-      <div></div>
+      <div>
+        <a><%= link_to "プロフィール編集" , edit_user_path %></a>
+      </div>
+      
       <h2>New book</h2>
       <%= form_with model: @book, url: '/books', method: :post do |f| %>
         <div>
@@ -51,6 +38,7 @@
         </div>
      <% end %>
      <div>
+       
        <h2>Books</h2>
        <table>
          <thead>
@@ -67,7 +55,7 @@
                <td></td>
                <td></td>
                <td><% book.body =%></td>
-          </tr>
+              </tr>
            <% end %>
          </tbody>
        </table>
@@ -75,12 +63,3 @@
     </div>
   </div>
 </main>
-<footer>
-  <div>
-    <div>
-      <div>
-        <p>CopyRight Infratop.inc</p>
-      </div>
-    </div>
-  </div>
-</footer>
