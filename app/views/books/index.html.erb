@@ -3,7 +3,7 @@
   <p></p>
   <div>
     <%= render 'books/index', book: @book, user: @user %>
-     
+
      <div>
 
        <h2>Books</h2>
@@ -20,7 +20,7 @@
 
              <tr>
                <td><%= image_tag @user.get_profile_image(100, 100) %></td>
-               <td><%= link_to "book.title", book_path(@book.id) %></td>
+               <td><%= link_to "book.title", book_path(book.id) %></td>
                <td><% book.body =%></td>
               </tr>
            <% end %>

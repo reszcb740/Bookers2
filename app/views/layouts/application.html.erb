@@ -21,6 +21,12 @@
            <ul>
              <% if user_signed_in? %>
                <li>
+                 <a><%= link_to "Home", users_path %></a>
+               </li>
+               <li>
+                 <a><%= link_to "Users", user_path(current_user.id) %></a>
+               </li>
+               <li>
                  <a><%= link_to "Books", books_path %></a>
                </li>
                <li>

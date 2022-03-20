@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   def index
-    @user = User.all
+    @user = current_user
     @book = Book.all
+    @book = Book.new
+    flash[:notice] = "Welcome! You have signed up successfully."
   end
 
   def show
-    @user = User.new
+    @user = User.find(params[:id])
     @books = @user.books
   end
 
