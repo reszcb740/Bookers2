@@ -1,5 +1,5 @@
 <main>
-  <p></p>
+  <p class="id"><%= flash[:notice] %></p>
 <%= render 'books/index', book: @book_new, user: @user %>
 <div>
   <h2>Book detail</h2>
