@@ -19,10 +19,10 @@
       </div>
 
       <h2>New book</h2>
-      <% if @book.errors.any? %>
-       <p class="notice"><%= @book.errors.count %> errors prohibited this obj from being saved: </p>
+      <% if book.errors.any? %>
+       <p class="notice"><%= book.errors.count %> errors prohibited this obj from being saved: </p>
        <ul>
-         <% @book.errors.full_messages.each do |message| %>
+         <% book.errors.full_messages.each do |message| %>
           <li class="notice"><%= message %></li>
          <% end %>
        </ul>

@@ -4,7 +4,7 @@
     <div>
       <div>
         <h2>User info</h2>
-        <% @user.errors.any? %>
+        <% if @user.errors.any? %>
          <p class="notice"><%= @user.errors.count %> errors prohibited this obj from being saved: </p>
          <ul>
            <% @user.errors.full_messages.each do |message| %>
@@ -12,6 +12,7 @@
            <% end %>
          </ul>
         <% end %>
+
         <%= form_with model: @user do |f| %>
         <div class="form-group">
           <label for="user_name">Name</label>
