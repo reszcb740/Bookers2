@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  # before_action :correct_user, only: [:edit, :update]
+  
   def new
     @book = Book.new
   end
@@ -12,6 +12,7 @@ class BooksController < ApplicationController
      redirect_to book_path(@book.id)
    else
     @books = Book.all
+    @user = current_user
     render :index
    end
   end
@@ -59,5 +60,5 @@ class BooksController < ApplicationController
     params.require(:book).permit(:title, :profile_image, :body, :user)
   end
 
-  
+
 end
